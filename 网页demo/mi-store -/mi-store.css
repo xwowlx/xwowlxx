@@ -1,0 +1,936 @@
+/* ------------------------------------------------------- */
+/* --------------------------头部------------------------- */
+/* ------------------------------------------------------- */
+.header{
+    width: 100%;
+    height: 42px;
+    background-color: #333;
+    line-height: 40px;
+    position: relative;
+}
+.header a{
+    color: #b0b0b0;
+    font-size: 12px;
+}
+
+/* 丨 */
+.header span{
+    color: #434343;
+    margin: 0 3.6px;
+    font-size: 12px;
+}
+.header a:hover{
+    color: #fff;
+}
+
+
+.warp{
+    width: 1226px;
+    margin: 0 auto;
+    /* 不设高度，内容撑开 */
+}
+
+.header-left{
+    float: left;
+}
+
+.header-right{
+    float: right;
+}
+
+.header li{
+    float: left;
+} 
+
+
+/* 购物车按钮部分 */
+.cart{
+    position: relative;
+    width: 120px;
+    height: 42px;
+    background-color: #424242;
+    margin-left: 15px;
+    /* 左外边距偏25 */
+    cursor: pointer;
+    /* 这个让整个背景都可选点击 */
+}
+
+
+/* 调整购物车文字的位置 */
+.cart a{
+    margin-left: 10px;
+}
+/* 鼠标悬停按钮时 */
+.cart:hover{
+    background-color: #fff;
+}
+/* cart子元素的a */
+.cart:hover>a{
+    color: #ff6700;
+}
+
+
+/* 购物车菜单 */
+.cart-down{
+    display: none;
+    position: absolute; /*根据上一级的cart来定位*/   
+    /* float: right; */
+    background-color: #fff;
+    width: 316px;
+    height: 100px;
+    right: 0px;   /*调整位置*/
+    top: 42px;
+    font-size: 12px;
+    color: #424242;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
+    line-height: 100px;
+    transition: all 0.5s; 
+    z-index: 5;
+}
+.cart:hover .cart-down{
+    display: block;
+    /* 这种方法快速显示，下面这种方法会有拉伸效果 */
+}
+
+/* 下载app二维码部分 */
+.download{
+    /* display: block;显现 */
+    position: absolute;  /*由header来定位*/
+    background-color: #fff;
+    height: 0;
+    width: 124px;
+    top: 42px;
+    font-size: 12px;
+    color: #424242;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
+    transition: all 0.3s;
+    overflow: hidden;
+    /* display: none; */
+    /* left: 50%; */
+    margin-left: -40px; 
+    z-index: 5;
+   
+}
+
+.header-left>li:hover .download{
+    height: 143px;
+    /* display: block; */
+}
+
+.download >img{
+    width: 90px;
+    margin: 18px 0 10px;
+}
+.download >p{
+    color: #333;
+    line-height: 1px;
+    font-size: 12px;
+}
+
+/* 下载app的三角区 */
+.triangle{
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 34px;
+    left: 50%;
+    margin-left: 12px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #fff;
+    display: none;
+    z-index: 6;
+    /* transition: all 0.3s; */
+}
+
+.header-left>li:hover .triangle{
+    display: block;
+    /* transition: all 0.3s; */
+}
+
+/* ------------------------------------------------------- */
+/* --------------------------导航------------------------- */
+/* ------------------------------------------------------- */
+.nav{
+    width: 100%;
+    /* background-color: #000; */
+    height: 100px;
+    clear: both;
+    position: relative;
+    /* box-shadow: 0 3px 4px rgba(0, 0, 0, .18);阴影 */
+    /* 父元素，定位用的 */
+}
+
+/* logo部分 */
+.logo{
+    width: 234px;
+    height: 100px;
+    /* background-color: red; */
+    float: left;
+}
+.logo>a{
+    /* margin-left: -150px; */
+    margin-top: 22px;
+    float: left;
+}
+
+/* 导航菜单部分 */
+.nav-bar{
+    width: 696px;
+    height: 100px;
+    /* background-color: salmon; */
+    float: left;
+    padding: 0 24px;
+}
+
+.nav-bar ul>li{
+    float: left;
+    /* margin: 0 10px; */
+    /* line-height: 100px; */
+}
+
+.nav-bar ul>li >a{
+    display: block;/* 变成 块 */
+    font-size: 15px;
+    color: #333;
+    padding: 38px 11px;
+}
+
+.nav-bar ul>li>a:hover{
+    color: #ff6700;
+}
+
+/* 导航下拉菜单部分 */
+.nav-bar-list{
+    position: absolute;  /*用了这个后就是父元素的100%*/
+    width: 100%;      /*这里的100%是上级元素的100%*/
+    height: 0px;
+    border-top: 1px solid #e0e0e0;
+    background-color: #fff;
+    /* box-shadow: 0 3px 4px rgba(0, 0, 0, .18); */
+    top: 100px;
+    left: 0;     /* absolute之后进行定位 */
+    overflow: hidden;
+    /* display: none; */
+    z-index: 3;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.nav-bar>ul>li:hover .nav-bar-list{
+    height: 229px;
+    /* display: block; */
+}
+
+/* 搜索部分 */
+.search{
+    width: 296px;
+    height: 50px;
+    /* background-color: royalblue; */
+    float: left;
+    position: relative;
+    margin-top: 25px; 
+}
+
+/* 搜索框 */
+.search input{
+    /* input跟button是行内块，用float 行内块会识别代码的之间空白，当然也可以用定位调整 */
+    float: left;
+    width: 223px;
+    height: 50px;
+    padding: 0 10px;
+    border: 1px solid #e0e0e0;
+    outline: none;/*去掉点击时的黑框*/
+    border-right: none;
+    transition: all 0.2s;
+}
+.search input:hover,.search input:hover+button{
+    border-color:#b0b0b0;
+    /* 鼠标悬停搜索框时，搜索框跟搜索按钮的边框同时变色（加号可以改成波浪线） */
+}
+.search input:focus,.search input:focus+button{
+    border-color: #ff6700;
+    border-width: 1.5px;
+}
+
+/* 搜索按钮 */
+.search button{
+    float: left;
+    width: 52px;
+    height: 50px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    outline: none;
+    transition: all 0.2s;
+}
+.search button:hover{
+    background-color: #ff6700;
+    border-color:#ff6700;
+    color:#fff;
+}
+
+.hot-list{
+    z-index: 4;
+    position: absolute;
+    width: 224px;
+    height: 240px;
+    border: 1px solid #ff6700;
+    border-top: none;
+    left: 0;
+    top: 50px;
+    display: none;
+}
+
+.hot-list> a{
+    display: block;  /*变成块*/
+    color: #424242;
+    font-size: 12px;
+    padding: 6px 15px;
+    text-align: left;
+    height: 30px;
+}
+
+.search a:hover{
+    background-color: #e0e0e0;
+}
+
+.search input:focus~.hot-list{
+    display: block;
+    background-color: #fff;
+}
+
+.nav-bar-list li{
+    width: 204px;
+    height: 100px;
+    padding-top: 35px;
+    float: left;
+}
+
+.nav-bar-img{
+    width: 203px;
+    padding-top: 10px;
+    height: 120px;
+    margin-bottom: 8px;
+    border-right: 1px solid #e0e0e0;
+}
+
+.nav-bar-img img{
+    width: 130px;
+    height: 100px;
+}
+
+.nav-bar-list p{
+    line-height: 20px;
+    font-size: 12px;
+    color: #333;
+}
+
+/* 最后一个p元素改色 */
+.nav-bar-list p:last-of-type{
+    color: #ff6700;
+}
+
+/* 去掉最后一条边 */
+.nav-bar-list li:last-child .nav-bar-img{
+    border-right:none ;
+}
+
+/* ------------------------------------------------------- */
+/* -------------------------banner------------------------- */
+/* ------------------------------------------------------- */
+.banner{
+    width: 100%;
+    height: 460px;
+    /* background-color: red; */
+}
+
+.banner-box{
+    width: 100%;
+    height: 460px;
+    position: relative;
+    /* background-color: wheat; */
+}
+
+.slide{    
+    width: 234px;
+    height: 460px;
+    padding: 20px 0;
+    background-color: rgba(105, 101, 101, .6);
+    position: absolute;    /**/
+    top: 0;
+    left: 0;
+}
+
+.slide>ul>li{
+    height: 42px;
+    line-height: 42px;
+    padding-left: 30px;
+    text-align: left;
+}
+
+.slide>ul>li:hover{
+    background-color: #ff6700;
+}
+.slide a{
+    color: #fff;
+    font-size: 14px;
+}
+
+.slide i{
+    float: right;
+    margin-right: 15px;
+    color: #e0e0e0;
+}
+/* 右菜单 */
+.slide-list{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 234px;
+    width: 993px;
+    height: 460px;
+    border: 1px solid #fff;
+    border-left: 0;
+    background-color: #fff;
+    box-shadow:0 8px 16px rgba(0, 0, 0, .18);
+    padding-top: 2px;
+}
+
+.slide ul li:hover > .slide-list{
+    display: block;
+}
+
+.slide-list ul{
+    width: 248px;
+    float: left;
+}
+
+.slide-list li{
+    width: 100%;
+    height: 75px;
+    /* background-color: #ff6700; */
+    padding: 18px 0 18px 20px;
+    box-sizing: border-box;
+}
+.slide-list img{
+    position: relative;
+    top: -15px;
+    margin-right: 12px;
+    height: 40px;
+    width: 40px;
+} 
+.slide-list span{
+    width: 171px;
+    display: inline-block;  /*行内块*/
+    line-height: 40px;
+    color: #333;
+    font-size: 14px;
+    white-space: nowrap;   /*文本不换行*/
+    overflow: hidden;   /*文字溢出时不显示*/
+    text-overflow: ellipsis;  /*文字溢出变省略号*/
+}
+.slide-list ul li:hover span{
+    color: #ff6700;
+}
+
+/* 左右箭头 */
+
+.pre,.next{
+    position: absolute;
+    width: 41px;
+    height: 69px;
+    top: 50%;
+    margin-top: -34.5px;
+
+}
+.pre i{
+    position: absolute;
+    width: 41px;
+    height: 69px;
+    margin-right: 15px;
+    color: #e0e0e0;
+}
+/* .pre{
+
+}
+.next{
+
+} */
+/* ------------------------------------------------------- */
+/* -------------------------广告------------------------- */
+/* ------------------------------------------------------- */
+.adv{
+    width: 100%;
+    height: 170px;
+    margin: 14px 0 26px;
+}
+
+.adv-aside{
+    float: left;
+    width: 234px;
+    height: 170px;
+    padding: 3px;
+    background-color: #5f5750;  
+}
+
+.adv-img{
+    float: left;
+    width: 316px;
+    height: 170px;
+    background-color: red;  
+    margin-left: 14.66px;
+    
+}
+.adv-img img{
+    width: 100%;
+}
+.adv-img :hover{
+    box-shadow: 0 15px 30px rgba(0,0,0,.2);
+    transition: all 0.5s ;
+}
+
+.adv-aside li{
+    position: relative;
+    display: block;
+    float: left;
+    width: 76px;
+    height: 82px;
+    /* cursor: pointer; */
+
+}
+
+.adv-aside i{
+    float: left;
+    font-size: 24px;
+    height: 24px;
+    width: 24px;
+    margin-bottom: 4px;
+    margin-top: 18px;
+    opacity: .6;
+    color: #fff;
+    margin-left: 25px;
+}
+
+.adv-aside  a{
+    float: left;
+    opacity: .6;
+    color: #fff;   
+    font-size: 13px;
+    transition: all 0.2s;    
+}
+
+.adv-aside p{
+    float: left;
+    margin-left: 9px;
+    transition: all 0.2s;    
+}
+
+.adv-aside ul li a:hover,.adv-aside li a:hover>i{
+    opacity: 1;
+    transition: all 0.2s;
+}
+
+.row::after,.col::before{
+    content: "";
+    position: absolute;
+    background-color: #665e57;
+}
+
+.row::after{
+    height: 1px;
+    width: 64px;
+    bottom: 0px;
+    left: 6px;
+}
+
+.col::before{
+    width: 1px;
+    height: 70px;
+    right: 0px;
+    top: 6px;
+}
+
+/* ------------------------------------------------------- */
+/* -------------------------主体------------------------- */
+/* ------------------------------------------------------- */
+.contant{
+    width: 100%;
+    background-color: #f5f5f5;
+    /* background-color: #ff6700; */
+    padding: 4px 0 12px;
+    /* height: 8000px; */
+}
+/* 横图广告 */
+.home-box{
+    width: 100%;
+    height: 120px;
+    margin: 22px 0;
+}
+.home-box img{
+    width: 100%;
+}
+
+
+/* 标题部分开始 */
+.title{
+    /* text-align: left;*/
+    height: 58px;
+    
+}
+/* 左字小标题 */
+.type{
+    float: left;
+    text-align: left;
+    font-size: 22px;
+    line-height: 58px;
+    font-weight: 200;
+    color: #333;
+    /* 字粗200   字的上下空间58 */
+}
+/* 右字小标题 */
+.more,.ele-type a{
+    float: right;
+    text-align: right;
+    font-size: 16px;
+    /* line-height: 58px; */
+    color: #424242;
+    margin-top: 16px;
+    margin-left: 30px;
+    transition: all .4s;
+   
+    /* display: inline-block; */
+}
+/* js动画 */
+.current a{
+    color: #ff6700;
+    padding-bottom: 2px;
+    border-bottom: 2px solid  #ff6700;
+}
+/* .ele-type a:hover{
+    color: #ff6700;
+    padding-bottom: 2px;
+    border-bottom: 2px solid  #ff6700;
+} */
+.more:hover{
+    color: #ff6700;
+}
+/* 标题部分结束 */
+
+
+/* 商品主体部分 */
+/* 商品页面高度 */
+.phone-box,.ele-box{
+    width: 100%;
+    height: 628px;
+}
+.ele-box{
+    display: none;
+}
+.ele-moren{   /*默认*/
+    display: block;
+}
+/* 大图手机div左 */
+.phone-box-left{
+    float: left;
+    width: 234px;
+    height: 614px;
+}
+/* 手机div右 */
+.phone-box-right{
+    float: left;
+    width: 992px;
+    height: 614px;
+}
+
+/* 商品右 */
+.items{
+    width: 234px;
+    float: left;
+    height: 300px;
+    background-color: #fff;
+    margin-bottom: 14px;
+    margin-left: 14px;
+    transition: all .2s linear;
+}
+
+/* 商品图片 */
+.items a img{
+    width: 160px;
+    margin: 20px 0 18px;
+}
+
+/* 商品左-big */
+.items-left-big{
+    transition: all .2s linear;
+    float: left;
+}
+/* 商品左-sma */
+.items-left-sma{
+    float: left;
+    margin-bottom: 14px;
+    width: 234px;
+    height: 299px;
+    transition: all .2s linear;
+}
+/* 左边商品大图片 */
+.items-left-big a img{
+    width: 100%;
+}
+/* 左边商品小图片 */
+.items-left-sma a img{ 
+    width: 100%;
+}
+
+/* 鼠标移动动画 */
+.items:hover,.items-left-big:hover,.items-left-sma:hover,.items-half div:hover{
+    transform: translateY(-2px);  /*上移两像素*/
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+}
+
+/* 商品信息部分 */
+/* 名称 */
+.name{
+    width: 214px;
+    height: 21px;
+    margin: 0 auto 2px;
+    font-size: 14px;
+    color: #333;
+    overflow: hidden;
+    white-space: nowrap;   /*不换行*/
+    text-overflow: ellipsis;   /*省略号*/
+}
+/* 描述 */
+.desc{
+    width: 214px;
+    height: 18px;
+    color: #b0b0b0;
+    font-size: 12px;
+    margin: 0 auto 10px;
+    overflow: hidden;
+    white-space: nowrap;   /*不换行*/
+    text-overflow: ellipsis;   /*省略号*/
+}
+/* 价格 */
+.price{
+    color: #ff6700;
+    font-size: 14px;
+}
+/* 右下角商品 */
+.items-half{
+    height: 300px;
+    width: 234px;
+    margin-left: 14px;
+    float: left;
+}
+.items-half>div{
+    position: relative;
+    width: 234px;
+    height: 143px;
+    background-color: #fff;
+    margin-bottom: 14px;
+    transition: all .2s linear;
+}
+.items-half>div>a{
+    width: 234px;
+    height: 143px;
+    /* margin-top: 30px ; */
+    display: block;
+}
+.items-half>div a img{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 32px;
+    right: 20px;
+}
+.name-half{
+    display: inline-block;
+    margin: 40px 110px 5px 30px;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+}
+.price-half{
+    position: absolute;
+    left: 30px;
+}
+
+.items-half small{
+    /* float: left; */
+    position: absolute;
+    top: 75px;
+    left: 30px;
+    color: #757575;
+}
+.items-half h3{
+    /* float: left; */
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* ------------------------------------------------------- */
+/* -------------------------页脚------------------------- */
+/* ------------------------------------------------------- */
+.footer-top{
+    background-color: #fff;
+}
+
+.footer-bottom{
+    background-color: #fafafa;
+    padding: 30px 0;
+}
+
+.footer-server{
+    width: 100%;
+    height: 75px;
+    line-height: 25px;
+    padding: 27px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.footer-server li{
+    float: left;
+    width: 19.8%;
+    border-right: 1px solid #e0e0e0;  
+}
+.footer-server li:last-child{
+    border-right: none;
+}
+.footer-server a{
+    color: #616161;
+    transition: all .2s;
+}
+.footer-server a:hover{
+    color: #ff6700;
+}
+
+.footer-links{
+    padding: 40px 0;
+    height: 172px;
+}
+.col-links{
+    float: left;
+    width: 160px;
+    text-align: left;
+}
+.col-links>dd{
+    height: 18px;
+    margin-top: 10px;
+}
+.col-links>dd a{
+    font-size: 12px;
+    color: #757575;
+}
+
+.col-links>dt{
+    height: 17px;
+    margin: -1px 0 26px;
+    font-size: 14px;
+    color: #424242;
+}
+.col-links>dd a:hover{
+    color: #ff6700;
+}
+.contact{
+    float: right;
+    width: 257px;
+    height: 111px;
+    border-left: 1px solid #e0e0e0;
+}
+.contact>p:first-of-type{
+    font-size: 22px;
+    line-height: 22px;
+    color: #ff6700;
+    margin-bottom: 5px;
+}
+.contact>p:nth-of-type(2){
+    color: #616161;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.btn{
+    width: 118px;
+    height: 28px;
+    border: 1px solid #ff6700;
+    display: inline-block;
+    line-height: 28px;
+    background-color: #fff;
+    color: #ff6700;
+    font-size: 12px;
+    transition: all .4s;
+}
+.btn:hover{
+    background-color: #ff6700;
+    color: #fff;
+}
+
+/* ------------------------------------------------------- */
+/* -------------------------固定样式------------------------- */
+/* ------------------------------------------------------- */
+.fixed{
+    z-index: 100;
+    position: fixed;
+    width: 84px;
+    height: 455px;
+    right: -2px;
+    bottom: 70px;
+}
+.fixed-items{
+    position: relative;
+    width: 82px;
+    height: 91px;
+    background-color: #fff;
+    border: 1px solid #f5f5f5;
+    text-align: center;
+    cursor: pointer;
+}
+
+.fixed-items i{
+    font-weight: 600;
+    font-size: 30px;    
+    position: relative;
+    top: 18px;
+    color: #757575;
+    opacity: .6;
+}
+.fixed-items p{
+    position: relative;
+    top: 25px;
+    color: #333;
+    font-size: 14px;
+}
+.fixed-items:hover p,.fixed-items:hover i{
+    color: #ff6700;
+    opacity: 1;
+}
+.phone-code{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 94px;
+    background-color: #fff;
+    width: 130px;
+    height: 191px;
+    border: 1px solid #f5f5f5;
+    transition: all .6s;
+}
+.phone-code img{
+    /* float: left; */
+    width: 100px;
+    height: 100px;
+    margin: 20px auto 0;
+}
+.phone-code p2{
+    color: #757575;
+    font-size: 14px;
+    margin: 5px 25px 0;
+     float: left;
+    top: 125px;
+}  
+.fixed ul:first-child :hover>.phone-code{
+    display: block;
+}

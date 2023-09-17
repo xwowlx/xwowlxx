@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;
+    /* padding和border的值就不会在影响元素的宽高，相当于把padding和border的值都算在content里
+    盒子模型会自动根据padding和border的值来调整content的值，就不需要手动调整 */
+    margin: 0;
+    padding: 0;
+}
+body{
+    text-align: center;
+    min-width: 1226px;
+    font-family: sans-serif;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+img,input,button{
+    border: none;
+    vertical-align: middle;
+}
+

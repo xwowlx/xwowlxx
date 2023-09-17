@@ -1,0 +1,286 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.font-12{
+    font-size: 12px;
+    font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "宋体", sans-serif;
+    list-style: none;
+}
+.daohan{
+    width: 1190px;
+    height: 30px;
+    line-height: 30px;
+}
+.lr{
+    width: 801px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.flex{
+    display: flex;
+}
+.flexcenter{
+    display: flex;
+    justify-content: center;
+}
+.flexbet{
+    display: flex;
+    justify-content: space-between;
+}
+.flex-wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+.flexar{
+    display: flex;
+    justify-content: space-around;
+}
+.gray{
+    color: darkgray;
+}
+.black{
+    color: black;
+}
+.headline{
+    width: 1536px;
+    height: 30px;
+    background-color:#e3e4e5;
+    border-bottom: 1px solid #ddd;
+    
+}
+.head{
+    width: 100%;
+    height: 140px;
+    background-color: #fff;
+    border-bottom: 1px solid#ddd;
+}
+.b-box{
+    box-sizing: border-box;
+}
+.fontstyle{
+    font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "宋体", sans-serif
+
+}
+.wrap{
+    width: 1190px;
+    height: 140px;
+}
+.logo{
+    width: 190px;
+    height: 120px;
+    
+}
+.jdlogo{
+    width: 110px;
+    height: 110px;
+}
+.flexcocenter{
+    display: flex;
+    align-self: center;
+}
+.login{
+    width: 776px;
+    height: 148px;
+}
+.ad{
+    width: 190px;
+    height:120px;
+}
+.search{
+    width: 700px;
+}
+.text{
+    width: 489px;
+    height: 35px;
+    border:2px solid red;
+}
+.shopcar{
+    width: 130px;
+    height: 36px;
+    border: 1px solid #ddd;
+}
+.hotz{
+    width: 700px;
+    height: 20px;
+}
+.heiz{
+    width: 776px;
+    height: 20.8px;
+
+}
+.flexco{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-self: center;
+}
+
+.button{
+    width: 58px;
+    height: 38.2px;
+    background-color: red;
+    border: 0;
+}
+.pai{
+    width: 20px;
+    height: 20px;
+    margin-left: -20px;
+    margin-top: 10px;
+}
+.center{
+    margin: 0 auto;
+}
+.end{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.kong{
+    height: 10px;
+}
+.font-15{
+    font-size: 15px;
+    color: #333;
+}
+.firstscreen{
+    width: 1190px;
+    height: 480px;
+    background-color: rgb(240, 249, 249);
+}
+.flexcc{display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;}
+.form{
+    width: 190px;
+    height: 480px;
+    background-color: white;
+    padding: 15px;
+}
+.flexcobet{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.flexcoar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.webox{
+    box-sizing: border-box;
+}
+.font-14{
+    font-size: 14px;
+}
+.fsad{
+    width: 190px;
+    height: 480px;
+
+    background-color: white;
+}
+.loginbutton{
+    width: 190px;
+    height: 102px;
+    position: relative;
+}
+.img5{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 15%;
+    right: 0%;
+    top: 2.5%;
+}
+
+.user{ width: 106px;
+    height: 38px;
+    position: absolute;
+    left: 40%;
+    right: 0%;
+    top: 8%;
+
+}
+.button1{
+    width: 70px;
+    height: 25px;
+    border-radius: 15px;
+    border: 0;
+    background-color: red;
+    color: white;
+}
+.button2{width: 70px;
+    height: 25px;
+    border-radius: 15px;
+    border: 0;
+    background-color: black;
+    color: gold;
+}
+.hidden{
+    
+    white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+.new2{
+    height: 88px;
+    width: 184px;
+    
+}
+.news_tag{
+    width: 35px;
+    height: 16px;
+    background-color: rgba(225,37,27,.08);
+    color: #e1251b;
+
+}
+.flowad{
+    width: 580px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    border: 10px solid rgb(229, 233, 223);
+    margin: auto;
+}
+.cir {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.cir a{
+    width: 15px;
+    height: 15px;
+    background: yellow;
+    display: block;
+    border-radius: 50%;
+    opacity: .5;
+    float: left;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.cir a.hover{
+    background: black;
+    opacity: .8; 
+}
+.imgList img {
+    width: 600px;
+    height: 350px;
+}
+.imgList{
+    position: relative;
+    height: 350px;
+}
+.imgList li {
+    float:left;
+    margin-right: 20px;
+    padding: 0px;
+    margin: 0px;
+}
+.cir a:hover{
+    background: black;
+    opacity: .8; 
+}
